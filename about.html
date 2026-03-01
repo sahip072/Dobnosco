@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Don Bosco School</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.about-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.about-section h2 {
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.stat-box {
+    width: 200px;
+    margin: 20px;
+    padding: 20px;
+    background: #f4f6f9;
+    border-radius: 10px;
+}
+
+.stat-box h3 {
+    font-size: 28px;
+    color: #001f3f;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: #001f3f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #003366;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>About Don Bosco School</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">Introduction</a>
+    <a href="admission.html">Admissions</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<div class="about-section">
+
+    <h2>Our Legacy</h2>
+    <p>
+        Don Bosco School has been a center of excellence in education,
+        shaping students into responsible global citizens. Inspired by
+        the teachings of St. John Bosco, we focus on discipline,
+        integrity, and holistic development.
+    </p>
+
+    <h2>Our Vision</h2>
+    <p>
+        To empower students with knowledge, leadership skills,
+        and moral values that prepare them for future challenges.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+        We aim to create a dynamic learning environment that fosters
+        innovation, creativity, and character-building.
+    </p>
+
+    <div class="stats">
+        <div class="stat-box">
+            <h3>1500+</h3>
+            <p>Students</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>100+</h3>
+            <p>Teachers</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>25+</h3>
+            <p>Years of Excellence</p>
+        </div>
+    </div>
+
+    <a href="admission.html" class="btn">Apply for Admission</a>
+
+</div>
+
+</body>
+</html>

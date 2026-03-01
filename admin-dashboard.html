@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="requireRole('admin')">
+<header class="header">
+  <div class="header-inner">
+    <div class="brand"><h1>Admin Dashboard</h1><p id="whoami">Loading...</p></div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <button class="icon-btn" onclick="toggleTheme()">🌙</button>
+      <button class="icon-btn" onclick="logoutUser()">Logout</button>
+    </nav>
+    <button class="icon-btn hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="#" onclick="toggleTheme()">🌙 Theme</a>
+    <a href="#" onclick="logoutUser()">Logout</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Approve Teacher</h2>
+    <div class="row">
+      <input class="input" id="approveEmail" placeholder="teacher@email.com" style="max-width:420px;">
+      <button class="btn" onclick="approveTeacher()">Approve</button>
+      <button class="btn secondary" onclick="loadAdminData()">Refresh Users</button>
+    </div>
+    <p class="muted" style="margin-top:8px;">
+      Teachers must be approved before they can log in as Teacher role.
+    </p>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h2>Users</h2>
+    <table>
+      <thead><tr><th>Role</th><th>Name</th><th>Email</th><th>Class</th></tr></thead>
+      <tbody id="userList"></tbody>
+    </table>
+  </div>
+</div>
+
+<script type="module">
+  import "./script.js";
+  window.addEventListener("load", ()=> setTimeout(()=>window.loadAdminData(), 600));
+</script>
+</body>
+</html>

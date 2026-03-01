@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="requireRole('student')">
+<header class="header">
+  <div class="header-inner">
+    <div class="brand"><h1>Student Dashboard</h1><p id="whoami">Loading...</p></div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <button class="icon-btn" onclick="toggleTheme()">🌙</button>
+      <button class="icon-btn" onclick="logoutUser()">Logout</button>
+    </nav>
+    <button class="icon-btn hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="#" onclick="toggleTheme()">🌙 Theme</a>
+    <a href="#" onclick="logoutUser()">Logout</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="card">
+    <div class="row">
+      <div class="muted">Your class:</div>
+      <div><b id="studentClass">...</b></div>
+      <button class="btn small secondary" onclick="loadStudentData()">Refresh</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h2>Syllabus</h2>
+    <table><thead><tr><th>Topic</th><th>Details</th></tr></thead><tbody id="syllList"></tbody></table>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h2>Projects</h2>
+    <table><thead><tr><th>Project</th><th>Due</th></tr></thead><tbody id="projList"></tbody></table>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h2>Marks</h2>
+    <table><thead><tr><th>Subject</th><th>Score</th></tr></thead><tbody id="marksList"></tbody></table>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h2>Updates</h2>
+    <table><thead><tr><th>Tag</th><th>Message</th></tr></thead><tbody id="updList"></tbody></table>
+  </div>
+</div>
+
+<script type="module">
+  import "./script.js";
+  window.addEventListener("load", async ()=> {
+    // wait tiny bit for auth state
+    setTimeout(()=>window.loadStudentData(), 500);
+  });
+</script>
+</body>
+</html>

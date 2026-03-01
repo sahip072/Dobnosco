@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Bosco Enterprise</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="initSlider();animateCounters();">
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1>Don Bosco School</h1>
+      <p>EXCELLENCE • DISCIPLINE • INTEGRITY</p>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="register.html">Admission</a>
+      <a href="login.html">Login</a>
+      <a href="student-dashboard.html">Student</a>
+      <a href="teacher-dashboard.html">Teacher</a>
+      <a href="admin-dashboard.html">Admin</a>
+      <button class="icon-btn" onclick="toggleTheme()">🌙</button>
+    </nav>
+
+    <button class="icon-btn hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="register.html">Admission</a>
+    <a href="login.html">Login</a>
+    <a href="student-dashboard.html">Student</a>
+    <a href="teacher-dashboard.html">Teacher</a>
+    <a href="admin-dashboard.html">Admin</a>
+    <a href="#" onclick="toggleTheme()">🌙 Theme</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="hero card">
+    <div class="hero-inner">
+      <h2>Shaping Future Leaders</h2>
+      <p>Real Firebase login + real school portal (syllabus, projects, marks, updates).</p>
+      <div class="row">
+        <a class="btn" href="register.html">Apply for Admission</a>
+        <a class="btn secondary" href="login.html">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature card"><h3>Smart Learning</h3><p class="muted">Modern teaching + digital portal.</p></div>
+    <div class="feature card"><h3>Sports & Clubs</h3><p class="muted">Holistic development and talent.</p></div>
+    <div class="feature card"><h3>Secure Portal</h3><p class="muted">Role-based access using Firebase.</p></div>
+  </div>
+
+  <div class="grid" style="margin-top:16px;">
+    <div class="card" style="grid-column: span 12;">
+      <div class="counter-wrap">
+        <div class="counter card"><div class="num" data-counter="1500">0</div><div class="muted">Students</div></div>
+        <div class="counter card"><div class="num" data-counter="110">0</div><div class="muted">Teachers</div></div>
+        <div class="counter card"><div class="num" data-counter="25">0</div><div class="muted">Years</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" style="margin-top:16px;">
+    <div class="card" style="grid-column: span 7;">
+      <h2>Principal’s Message</h2>
+      <p class="muted">Welcome to Don Bosco School. We believe in discipline, kindness, and excellence. This portal helps you stay updated with academics and school announcements.</p>
+    </div>
+    <div class="card" style="grid-column: span 5;">
+      <h2>Testimonials</h2>
+      <div class="slider">
+        <div class="slide active">
+          <p>“Amazing teachers and strong values.”</p>
+          <div class="who">— Parent</div>
+        </div>
+        <div class="slide">
+          <p>“The portal makes learning organized.”</p>
+          <div class="who">— Student</div>
+        </div>
+        <div class="slide">
+          <p>“Great discipline + activities.”</p>
+          <div class="who">— Alumni</div>
+        </div>
+      </div>
+      <div class="row" style="justify-content:flex-end;margin-top:10px;">
+        <button class="btn small secondary" onclick="prevSlide()">◀</button>
+        <button class="btn small" onclick="nextSlide()">▶</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h2>Gallery</h2>
+    <div class="gallery" style="margin-top:10px;">
+      <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=60" onclick="openModal(this.src)">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=60" onclick="openModal(this.src)">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=60" onclick="openModal(this.src)">
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal" onclick="closeModal()">
+  <img id="modalImg" alt="preview">
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 Don Bosco School</div>
+    <div>Contact: office@donbosco.example</div>
+  </div>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

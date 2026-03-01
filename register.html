@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Admission</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand"><h1>Admission</h1><p>Student Registration</p></div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <button class="icon-btn" onclick="toggleTheme()">🌙</button>
+    </nav>
+    <button class="icon-btn hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="#" onclick="toggleTheme()">🌙 Theme</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Register as Student</h2>
+    <div class="form">
+      <input class="input" id="name" placeholder="Full Name">
+      <input class="input" id="className" placeholder="Class (e.g., 8A)">
+      <input class="input" id="email" placeholder="Email">
+      <input class="input" id="password" type="password" placeholder="Password (min 6 chars)">
+      <button class="btn" onclick="registerStudent()">Create Account</button>
+      <div class="muted">Already registered? <a href="login.html"><b>Login</b></a></div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

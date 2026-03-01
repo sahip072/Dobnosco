@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="requireRole('teacher')">
+<header class="header">
+  <div class="header-inner">
+    <div class="brand"><h1>Teacher Dashboard</h1><p id="whoami">Loading...</p></div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <button class="icon-btn" onclick="toggleTheme()">🌙</button>
+      <button class="icon-btn" onclick="logoutUser()">Logout</button>
+    </nav>
+    <button class="icon-btn hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="#" onclick="toggleTheme()">🌙 Theme</a>
+    <a href="#" onclick="logoutUser()">Logout</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="grid">
+    <div class="card" style="grid-column: span 6;">
+      <h2>Post Syllabus</h2>
+      <div class="form">
+        <input class="input" id="syllClass" placeholder="Class (e.g., 8A)">
+        <input class="input" id="syllTitle" placeholder="Title">
+        <textarea class="input" id="syllText" placeholder="Details..."></textarea>
+        <button class="btn" onclick="teacherAddSyllabus()">Post</button>
+      </div>
+    </div>
+
+    <div class="card" style="grid-column: span 6;">
+      <h2>Post Project</h2>
+      <div class="form">
+        <input class="input" id="projClass" placeholder="Class (e.g., 8A)">
+        <input class="input" id="projTitle" placeholder="Project Title">
+        <input class="input" id="projDue" type="date">
+        <textarea class="input" id="projText" placeholder="Project instructions..."></textarea>
+        <button class="btn" onclick="teacherAddProject()">Post</button>
+      </div>
+    </div>
+
+    <div class="card" style="grid-column: span 6;">
+      <h2>Add Marks</h2>
+      <div class="form">
+        <input class="input" id="mEmail" placeholder="Student Email">
+        <input class="input" id="mSubject" placeholder="Subject">
+        <input class="input" id="mScore" type="number" placeholder="Score">
+        <input class="input" id="mOutOf" type="number" placeholder="Out Of">
+        <button class="btn" onclick="teacherAddMarks()">Save Marks</button>
+      </div>
+    </div>
+
+    <div class="card" style="grid-column: span 6;">
+      <h2>Post Update</h2>
+      <div class="form">
+        <input class="input" id="upTag" placeholder="Tag (Info/Exam/Event)">
+        <input class="input" id="upTitle" placeholder="Title">
+        <textarea class="input" id="upText" placeholder="Message..."></textarea>
+        <button class="btn" onclick="teacherAddUpdate()">Post</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <div class="row">
+      <h2 style="margin-right:auto;">All Data (Preview)</h2>
+      <button class="btn small secondary" onclick="loadTeacherData()">Refresh</button>
+    </div>
+
+    <h3 style="margin-top:12px;">Syllabus</h3>
+    <table><thead><tr><th>Class</th><th>Post</th></tr></thead><tbody id="tSyll"></tbody></table>
+
+    <h3 style="margin-top:12px;">Projects</h3>
+    <table><thead><tr><th>Class</th><th>Project</th><th>Due</th></tr></thead><tbody id="tProj"></tbody></table>
+
+    <h3 style="margin-top:12px;">Updates</h3>
+    <table><thead><tr><th>Tag</th><th>Message</th></tr></thead><tbody id="tUpd"></tbody></table>
+
+    <h3 style="margin-top:12px;">Marks</h3>
+    <table><thead><tr><th>Student</th><th>Subject</th><th>Score</th></tr></thead><tbody id="tMarks"></tbody></table>
+  </div>
+</div>
+
+<script type="module">
+  import "./script.js";
+  window.addEventListener("load", ()=> setTimeout(()=>window.loadTeacherData(), 600));
+</script>
+</body>
+</html>

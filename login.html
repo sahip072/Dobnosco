@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand"><h1>Login</h1><p>Select role and sign in</p></div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="register.html">Admission</a>
+      <button class="icon-btn" onclick="toggleTheme()">🌙</button>
+    </nav>
+    <button class="icon-btn hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="register.html">Admission</a>
+    <a href="#" onclick="toggleTheme()">🌙 Theme</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Sign In</h2>
+    <div class="form">
+      <select class="input" id="role">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+        <option value="admin">Admin</option>
+      </select>
+      <input class="input" id="loginEmail" placeholder="Email">
+      <input class="input" id="loginPassword" type="password" placeholder="Password">
+      <button class="btn" onclick="loginUser()">Login</button>
+      <div class="muted">Teacher accounts must be approved by Admin.</div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
